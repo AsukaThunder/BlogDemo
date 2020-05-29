@@ -1,0 +1,27 @@
+#端口配置
+server:
+  port: 8000
+
+#数据源
+spring:
+  devtools:
+    restart:
+      enabled: false
+  profiles.active: dev
+  datasource:
+    url: 'jdbc:mysql://localhost/blog_demo?useUnicode=true&characterEncoding=UTF-8&connectionCollation=utf8_bin'
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+
+  #JPA设置
+  jpa:
+    show-sql: true
+    open-in-view: true
+    properties:
+      hibernate:
+        hbm2ddl.auto: update
+        dialect: org.hibernate.dialect.MySQLDialect
+        #dialect: com.zhishang.hes.common.config.jpa.CustomMySQL5Dialect
+        format_sql: true
+        search.default.directory_provider: filesystem
